@@ -1,0 +1,32 @@
+{
+    "name": "marshmallow/prefiller-field",
+    "description": "A Laravel Nova field to prefill fields based on another field. Super Awesome!",
+    "keywords": [
+        "laravel",
+        "nova",
+        "prefill",
+        "nova field",
+        "marshmallow"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marshmallow\\PrefillerField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marshmallow\\PrefillerField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

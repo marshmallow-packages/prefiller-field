@@ -13,10 +13,12 @@ class PrefillController extends Controller
 		$resource = $model_class::find($request->source_value);
 		$prefill_with = $request->prefill_with;
 
-		if (method_exists($resource, 'prefill_with')) {
+		if (isset($resource->getAttributes()[$prefill_with])) {
+            $value = $resource->{$prefill_with};
+        } elseif (method_exists($resource, $prefill_with)) {
 			$value = $resource->{$prefill_with}();
 		} else {
-			$value = $resource->{$prefill_with};
+			$value = null;
 		}
 
 		return response()->json([

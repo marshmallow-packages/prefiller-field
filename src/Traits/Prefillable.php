@@ -9,7 +9,16 @@ trait Prefillable
         parent::__construct($name, $attribute, $resolveCallback);
         $this->withMeta([
     		'nova_vue_compontent' => $this->nova_vue_compontent,
+    		'update_filled_allowed' => false,
     	]);
+    }
+
+    public function allowUpdatingFilledFields()
+    {
+        return $this->withMeta([
+            'update_filled_allowed' => true,
+        ]);
+        return $this;
     }
 
 	public function fieldType($type)

@@ -34,7 +34,7 @@ export default {
 
   		document.addEventListener('change',function(e){
   			if (e.target.getAttribute('dusk') == vue.field.source_field) {
-  				if (!vue.field.value) {
+  				if (!vue.field.value || vue.field.update_filled_allowed === true) {
   					vue.getPrefillerValue(e.target.value)
   				}
   			}

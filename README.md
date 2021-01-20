@@ -31,6 +31,10 @@ public function fields(Request $request)
 }
 ```
 
+### Extra methods
+
+I you want the prefiller to check for new values, even if the target field is already filled with content, you can call the method `allowUpdatingFilledFields()`.
+
 ### Supported
 
 Currently we have only implemented the `Text` and `Currency` field because we needed it in a project for a customer. We will add more in the comming months. Feel free to send a pull request if you need another field for your project.

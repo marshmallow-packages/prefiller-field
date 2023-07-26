@@ -8,7 +8,7 @@ use Marshmallow\PrefillerField\Traits\Prefillable;
 
 class PrefillerCurrency extends Currency
 {
-	use Prefillable;
+    use Prefillable;
     /**
      * The field's component.
      *
@@ -16,5 +16,5 @@ class PrefillerCurrency extends Currency
      */
     public $component = 'prefiller-field';
 
-    public $nova_vue_compontent = 'form-currency-field';
+    public $nova_vue_component = 'form-currency-field';
 }

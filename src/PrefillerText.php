@@ -8,7 +8,7 @@ use Marshmallow\PrefillerField\Traits\Prefillable;
 
 class PrefillerText extends Text
 {
-	use Prefillable;
+    use Prefillable;
 
     /**
      * The field's component.
@@ -17,5 +17,5 @@ class PrefillerText extends Text
      */
     public $component = 'prefiller-field';
 
-    public $nova_vue_compontent = 'form-text-field';
+    public $nova_vue_component = 'form-text-field';
 }

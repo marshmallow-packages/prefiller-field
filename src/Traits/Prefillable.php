@@ -8,7 +8,7 @@ trait Prefillable
     {
         parent::__construct($name, $attribute, $resolveCallback);
         $this->withMeta([
-            'nova_vue_compontent' => $this->nova_vue_compontent,
+            'nova_vue_component' => $this->nova_vue_component,
             'update_filled_allowed' => false,
             'source_column' => 'id',
         ]);

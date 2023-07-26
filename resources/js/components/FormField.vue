@@ -1,13 +1,13 @@
 <template>
-	<div v-if="nova_vue_compontent === 'form-text-field'">
+	<div v-if="nova_vue_component === 'form-text-field'">
 		<form-text-field v-if="renderComponent" :field="field" :errors="errors" :show-help-text="showHelpText"/>
 	</div>
-	<div v-else-if="nova_vue_compontent === 'form-currency-field'">
+	<div v-else-if="nova_vue_component === 'form-currency-field'">
 		<form-currency-field v-if="renderComponent" :field="field" :errors="errors" :show-help-text="showHelpText"/>
 	</div>
 	<div v-else>
   		<p class="px-8 py-6">
-  			The field type <strong>{{ nova_vue_compontent }}</strong> is not implemented yet. Please create an issue or send us a pull request.
+  			The field type <strong>{{ nova_vue_component }}</strong> is not implemented yet. Please create an issue or send us a pull request.
   		</p>
 	</div>
 </template>
@@ -20,7 +20,7 @@ export default {
 	data() {
       	return {
         	renderComponent: true,
-        	nova_vue_compontent: null,
+        	nova_vue_component: null,
       	};
     },
 
@@ -30,7 +30,7 @@ export default {
 
   	mounted() {
   		let vue = this;
-  		this.nova_vue_compontent = this.field.nova_vue_compontent
+  		this.nova_vue_component = this.field.nova_vue_component
 
   		document.addEventListener('change',function(e){
   			if (e.target.getAttribute('dusk') == vue.field.source_field) {

@@ -18,6 +18,7 @@ public function fields(Request $request)
 		PrefillerText::make('Test', 'field_2')
                     ->sourceField('product')
                     ->sourceModel(\Marshmallow\Product\Models\Product::class)
+                    ->sourceColumn('external_id')
                     ->prefillWith('name'), // This can be a field or a method on your target resource
 
         PrefillerCurrency::make('Test 3', 'field_3')

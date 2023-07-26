@@ -51,6 +51,7 @@ export default {
 	        	prefill_with: vue.field.prefill_with,
 	        	source_field: vue.field.source_field,
 	        	source_model: vue.field.source_model,
+	        	source_column: vue.field.source_column,
 	        	source_value: source_value,
   			}
 

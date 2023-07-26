@@ -10,7 +10,7 @@ class PrefillController extends Controller
     public function filler(Request $request)
     {
         $model_class = '\\' . $request->source_model;
-        $resource = $model_class::find($request->source_value);
+        $resource = $model_class::where($request->source_column, $request->source_value)->firstOrFail();
         $prefill_with = $request->prefill_with;
 
         $value = null;

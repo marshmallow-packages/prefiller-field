@@ -5,6 +5,12 @@
 	<div v-else-if="nova_vue_component === 'form-currency-field'">
 		<form-currency-field v-if="renderComponent" :field="field" :errors="errors" :show-help-text="showHelpText"/>
 	</div>
+    <div v-else-if="nova_vue_component === 'form-date-field'">
+		<form-date-field v-if="renderComponent" :field="field" :errors="errors" :show-help-text="showHelpText"/>
+	</div>
+    <div v-else-if="nova_vue_component === 'form-select-field'">
+		<form-select-field v-if="renderComponent" :field="field" :errors="errors" :show-help-text="showHelpText"/>
+	</div>
 	<div v-else>
   		<p class="px-8 py-6">
   			The field type <strong>{{ nova_vue_component }}</strong> is not implemented yet. Please create an issue or send us a pull request.

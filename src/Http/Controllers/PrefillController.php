@@ -17,7 +17,7 @@ class PrefillController extends Controller
         $resource = $model_class::where($request->source_column, $request->source_value)->first();
         if (!$resource) {
             if (method_exists($model_class, 'noPrefillerResultFound')) {
-                $value = $model_class::noPrefillerResultFound($request->source_value, $request->source_column);
+                $value = $model_class::noPrefillerResultFound($request->source_value, $request->prefill_with);
                 return response()->json([
                     'value' => $value,
                 ]);

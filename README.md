@@ -33,9 +33,11 @@ public function fields(Request $request)
 ```
 
 ### Extra methods
-
+#### allowUpdatingFilledFields
 I you want the prefiller to check for new values, even if the target field is already filled with content, you can call the method `allowUpdatingFilledFields()`.
 
+#### noPrefillerResultFound
+If you want to call a function when no results where found on prefilling the data, you can add a static function on your source model called `noPrefillerResultFound`.
 ### Supported
 
 Currently we have implemented the field as listed below because we needed it in a project for a customer. We will add more in the comming months. Feel free to send a pull request if you need another field for your project.

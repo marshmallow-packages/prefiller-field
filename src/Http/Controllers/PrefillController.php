@@ -9,8 +9,25 @@ class PrefillController extends Controller
 {
     public function filler(Request $request)
     {
+        if (!$request->source_value) {
+            return;
+        }
+
         $model_class = '\\' . $request->source_model;
-        $resource = $model_class::where($request->source_column, $request->source_value)->firstOrFail();
+        $resource = $model_class::where($request->source_column, $request->source_value)->first();
+        if (!$resource) {
+            if (method_exists($model_class, 'noPrefillerResultFound')) {
+                $value = $model_class::noPrefillerResultFound($request->source_value, $request->source_column);
+                return response()->json([
+                    'value' => $value,
+                ]);
+            } else {
+                return response()->json([
+                    'value' => null,
+                ]);
+            }
+        }
+
         $prefill_with = $request->prefill_with;
 
         $value = null;

@@ -20,6 +20,6 @@
     },
     "dependencies": {
         "vue": "^3.2.47",
-        "tailwindcss": "^3.1.8"
+        "tailwindcss": "^4.1.11"
     }
 }
